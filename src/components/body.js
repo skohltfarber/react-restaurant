@@ -1,5 +1,5 @@
 import React from "react";
-import "./body.css";
+import BodyProduct from "./body_product.js";
 
 export default function Body() {
 
@@ -18,23 +18,73 @@ export default function Body() {
 
     return (
         <>
-            <div>
+            <div className="container">
+                <div className="row">
+                    <div className="col-12">
+                        <br />
+                        <h1>About Us</h1><a className="top" href="#top">Back to top of page</a><br /><br />
+                    </div>
+                </div>
+                <div className="row">
+                    <div className="col-sm-12 col-md-8">
+                        <p>Rogers Best Burgers believes in farm to table products. We believe in giving people the experience of how things use to be. It is an experience like no others. Where you get highly styled photos of products from our competitors, we believe
+                    in giving you raw ingredients the honest truth. No filters. No BS. Just an experience that your great great great grandfather had to deal with as a pioneer. </p>
+                    </div>
+                    <div className="col-sm-12 col-md-4">&nbsp;</div>
+                </div>
+                <div className="row">
+                    <div className="col-12">&nbsp;</div>
+                </div>
+                <div className="row">
+                    <div className="col-12">&nbsp;</div>
+                </div>
+                <div className="row">
+                    <div className="col-12">
+                        <h1><a name="beverage" href="#beverage">Beverages</a></h1>
+                        <a className="top" href="#top">Back to top of page</a><br /><br />
+                    </div>
+                </div>
                 {
-                    products.map((product) => (
-                        <div key={product.id}>
-                            <div>
-                                <h3>
-                                    {product.name}
-                                </h3>
-                                <img src={product.imagePath} alt={product.name} />
-                            </div>
-                            <div>
-                                <p>{product.description}</p>
-                            </div>
-                        </div>
+                    products.filter((product) => product.type === "Beverages").map((product) => (
+                        <BodyProduct key={product.id} name={product.name} image={product.imagePath} description={product.description} />
+                    ))
+                }
+                <div className="row">
+                    <div className="col-12">&nbsp;</div>
+                </div>
+                <div className="row">
+                    <div className="col-12">&nbsp;</div>
+                </div>
+                <div className="row">
+                    <div className="col-12">
+                        <h1><a name="appetizer" href="#appetizer">Appetizers</a></h1>
+                        <a className="top" href="#top">Back to top of page</a><br /><br />
+                    </div>
+                </div>
+                {
+                    products.filter(product => product.type === "Appetizers").map((product) => (
+                        <BodyProduct name={product.name} image={product.imagePath} description={product.description} />
+                    ))
+                }
+                <div className="row">
+                    <div className="col-12">&nbsp;</div>
+                </div>
+                <div className="row">
+                    <div className="col-12">&nbsp;</div>
+                </div>
+                <div className="row">
+                    <div className="col-12">
+                        <h1><a name="burger" href="#burger">Burgers</a></h1>
+                        <a className="top" href="#top">Back to top of page</a><br /><br />
+                    </div>
+                </div>
+                {
+                    products.filter(product => product.type === "Burgers").map((product) => (
+                        <BodyProduct name={product.name} image={product.imagePath} description={product.description} />
                     ))
                 }
             </div>
+            <br /><br />
         </>
     );
 }

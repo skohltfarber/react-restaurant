@@ -7,7 +7,7 @@ export default function Header() {
         <>
             <div className="animate__animated animate__lightSpeedInLeft">
                 <div className="d-sm-inline-flex">
-                    <img class="logo" src="./images/logo.png" alt="Logo" />
+                    <img className="logo" src="./images/logo.png" alt="Logo" />
                     <h1>Welcome to the Rogers Best Burgers</h1>
                     <a name="top" href="#top"></a>
                 </div>

@@ -46,7 +46,8 @@ export default function Body() {
                 </div>
                 {
                     products.filter((product) => product.type === "Beverages").map((product) => (
-                        <BodyProduct key={product.id} name={product.name} image={product.imagePath} description={product.description} />
+
+                        < BodyProduct key={product.id} name={product.name} image={product.imagePath} description={product.description} />
                     ))
                 }
                 <div className="row">
